@@ -7,7 +7,7 @@ import { Mono } from "../Mono.js";
 export const NoResults = (): JSX.Element => {
   return (
     <div className="py-14 px-14 text-center">
-      <CommandLineIcon className="mx-auto h-6 text-slate-500" />
+      <CommandLineIcon className="mx-auto h-6 text-slate-500 dark:text-zinc-300" />
       <Mono className="tracking-tighter">
         Query does not match any avaliable commands
       </Mono>

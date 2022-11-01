@@ -236,17 +236,17 @@ export const CommandPalette = (): JSX.Element => {
     query === ""
       ? []
       : groups
-          .map((group) => {
-            return {
-              ...group,
-              commands: group.commands.filter((command) => {
-                return `${group.name} ${command.name}`
-                  .toLowerCase()
-                  .includes(query.toLowerCase());
-              }),
-            };
-          })
-          .filter((group) => group.commands.length);
+        .map((group) => {
+          return {
+            ...group,
+            commands: group.commands.filter((command) => {
+              return `${group.name} ${command.name}`
+                .toLowerCase()
+                .includes(query.toLowerCase());
+            }),
+          };
+        })
+        .filter((group) => group.commands.length);
 
   return (
     <Transition.Root
@@ -257,7 +257,7 @@ export const CommandPalette = (): JSX.Element => {
     >
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <PaletteTransition>
-          <Dialog.Panel className="mx-auto max-w-2xl transform divide-y divide-gray-500 divide-opacity-10 overflow-hidden rounded-xl bg-white  shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
+          <Dialog.Panel className="mx-auto max-w-2xl transform divide-y divide-gray-500 dark:divide-zinc-600 divide-opacity-10 overflow-hidden rounded-xl bg-white dark:bg-zinc-800 shadow-2xl ring-1 ring-black dark:ring-zinc-400 ring-opacity-5 transition-all">
             <Combobox<Command | string>
               onChange={(input) => {
                 if (typeof input === "string") {
@@ -273,10 +273,10 @@ export const CommandPalette = (): JSX.Element => {
               {query === "" || filtered.length > 0 ? (
                 <Combobox.Options
                   static
-                  className="max-h-80 scroll-py-2 divide-y divide-gray-500 divide-opacity-10 overflow-y-auto"
+                  className="max-h-80 scroll-py-2 divide-y divide-gray-500 dark:divide-zinc-600 divide-opacity-10 overflow-y-auto"
                 >
                   <li className="p-2">
-                    <ul className="flex flex-col gap-2 text-sm text-gray-700">
+                    <ul className="flex flex-col gap-2 text-sm text-gray-700 dark:text-gray-300">
                       {filtered.map((group, index) => (
                         <SearchResult key={index} group={group} />
                       ))}
