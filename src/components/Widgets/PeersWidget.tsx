@@ -18,17 +18,17 @@ export const PeersWidget = ({ peers }: PeersWidgetProps): JSX.Element => {
   const { setActivePage } = useDevice();
 
   return (
-    <div className="flex gap-3 overflow-hidden rounded-lg bg-white p-3 shadow">
+    <div className="flex gap-3 overflow-hidden rounded-lg bg-white dark:bg-zinc-700 p-3 shadow">
       <div className="rounded-md bg-emerald-500 p-3">
         <UserGroupIcon className="h-6 text-white" />
       </div>
       <div>
-        <p className="truncate text-sm font-medium text-gray-500">
+        <p className="truncate text-sm font-medium text-gray-500 dark:text-zinc-300">
           Connected Peers
         </p>
         <div className="flex gap-1">
           {peers.length > 0 ? (
-            <p className="text-lg font-semibold text-gray-900">
+            <p className="text-lg font-semibold text-gray-900 dark:text-zinc-200">
               {`${peers.length} ${peers.length > 1 ? "Peers" : "Peer"}`}
             </p>
           ) : (

@@ -85,30 +85,27 @@ const StatusIndicator = ({
   return (
     <li className="relative">
       <div
-        className={`absolute top-4 left-2.5 -ml-px h-full w-0.5 ${
-          current >= total ? "bg-green-500" : "bg-[#f9e3aa]"
-        }`}
+        className={`absolute top-4 left-2.5 -ml-px h-full w-0.5 ${current >= total ? "bg-green-500" : "bg-[#f9e3aa]"
+          }`}
       />
       <div className="flex">
         <div
-          className={`relative z-10 flex h-5 w-5 rounded-full border-2  ${
-            current === 0
-              ? "border-[#dabb6b] bg-[#f9e3aa]"
-              : current >= total
+          className={`relative z-10 flex h-5 w-5 rounded-full border-2  ${current === 0
+            ? "border-[#dabb6b] bg-[#f9e3aa]"
+            : current >= total
               ? "border-green-500 bg-green-500"
               : "border-green-500 bg-[#f9e3aa]"
-          }`}
+            }`}
         >
           <span
-            className={`m-auto h-1.5 w-1.5 rounded-full ${
-              current > 0 ? "bg-green-500" : "bg-[#f9e3aa]"
-            }`}
+            className={`m-auto h-1.5 w-1.5 rounded-full ${current > 0 ? "bg-green-500" : "bg-[#f9e3aa]"
+              }`}
           />
         </div>
 
         <span className="ml-4 flex gap-1 text-sm">
           <span className="font-medium">{title}</span>
-          <span className="font-mono text-slate-500">
+          <span className="font-mono text-slate-500 dark:text-zinc-400">
             ({current}
             {total !== 0 && `/${total}`})
           </span>

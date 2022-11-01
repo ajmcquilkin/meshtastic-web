@@ -24,8 +24,8 @@ export const Dropdown = ({
     <Disclosure defaultOpen={defaultOpen}>
       {({ open }) => (
         <>
-          <Disclosure.Button className="group flex h-8 justify-between bg-slate-100 px-2 hover:bg-slate-200">
-            <div className="my-auto flex gap-2 text-slate-700">
+          <Disclosure.Button className="group flex h-8 justify-between bg-slate-100 dark:bg-zinc-700 px-2 hover:bg-slate-200 dark:hover:bg-zinc-500 dark:border-b dark:border-zinc-500">
+            <div className="my-auto flex gap-2 text-slate-700 dark:text-zinc-300">
               <div className="my-auto">{icon}</div>
               <span className="text-lg font-medium">{title}</span>
               {stat !== undefined && (
@@ -34,7 +34,7 @@ export const Dropdown = ({
                 </span>
               )}
             </div>
-            <div className="my-auto text-slate-600">
+            <div className="my-auto text-slate-600 dark:text-zinc-400">
               {open ? (
                 <ChevronUpIcon className="h-5" />
               ) : (
