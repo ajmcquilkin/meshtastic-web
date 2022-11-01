@@ -22,7 +22,7 @@ export const App = (): JSX.Element => {
   const device = getDevice(selectedDevice);
 
   return (
-    <div className="flex h-screen w-full">
+    <div className="flex h-screen w-full bg-white dark:bg-zinc-900">
       <DeviceSelector />
 
       {device && (

@@ -12,9 +12,9 @@ export const DeviceSelector = (): JSX.Element => {
   const { selectedDevice, setSelectedDevice } = useAppStore();
 
   return (
-    <div className="flex h-full w-16 items-center whitespace-nowrap bg-slate-50 pt-12 [writing-mode:vertical-rl]">
+    <div className="flex h-full w-16 items-center whitespace-nowrap bg-slate-50 dark:bg-zinc-800 pt-12 [writing-mode:vertical-rl]">
       <Mono>Connected Devices</Mono>
-      <span className="mt-6 flex gap-4 font-bold text-slate-900">
+      <span className="mt-6 flex gap-4 font-bold text-slate-900 dark:text-zinc-50">
         {getDevices().map((device) => (
           <div
             key={device.id}
@@ -25,11 +25,10 @@ export const DeviceSelector = (): JSX.Element => {
           >
             <Hashicon size={32} value={device.hardware.myNodeNum.toString()} />
             <div
-              className={`absolute -left-1.5 h-7 w-0.5 rounded-full group-hover:bg-orange-300 ${
-                device.id === selectedDevice
-                  ? "bg-orange-400"
-                  : "bg-transparent"
-              }`}
+              className={`absolute -left-1.5 h-7 w-0.5 rounded-full group-hover:bg-orange-300 ${device.id === selectedDevice
+                ? "bg-orange-400"
+                : "bg-transparent"
+                }`}
             />
           </div>
         ))}
@@ -37,19 +36,18 @@ export const DeviceSelector = (): JSX.Element => {
           onClick={() => {
             setSelectedDevice(0);
           }}
-          className={`h-8 w-8 cursor-pointer rounded-md border-2 border-dashed p-2 hover:border-orange-300 ${
-            selectedDevice === 0 ? "border-orange-400" : "border-slate-200"
-          }`}
+          className={`h-8 w-8 cursor-pointer rounded-md border-2 border-dashed p-2 hover:border-orange-300 ${selectedDevice === 0 ? "border-orange-400" : "border-slate-200"
+            }`}
         >
           <PlusIcon />
         </div>
       </span>
       <img src="Logo_Black.svg" className="mt-auto px-3" />
       <div className="my-4 flex flex-col gap-2 [writing-mode:horizontal-tb]">
-        <CommandLineIcon className="h-6 text-slate-400" />
+        <CommandLineIcon className="h-6 text-slate-400 dark:text-zinc-300" />
         <Mono className="text-xs">
-          <kbd className="rounded-md bg-slate-200 p-0.5 pr-1 italic">Ctrl</kbd>+
-          <kbd className="rounded-md bg-slate-200 p-0.5 pr-1 italic">K</kbd>
+          <kbd className="rounded-md bg-slate-200 dark:bg-zinc-700 p-0.5 pr-1 italic">Ctrl</kbd>+
+          <kbd className="rounded-md bg-slate-200 dark:bg-zinc-700 p-0.5 pr-1 italic">K</kbd>
         </Mono>
       </div>
     </div>
